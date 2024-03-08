@@ -1,7 +1,10 @@
 import React from 'react';
 import { addDriver } from '../store';
+import { useDispatch } from 'react-redux';
 
 const DriverForm = () => {
+    const dispatch = useDispatch()
+    
     var name = ''
     var team = ''
     var wins = 0

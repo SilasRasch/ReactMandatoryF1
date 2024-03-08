@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { store } from './store';
+// import { apiSlice } from './store/api/apiSlice';
+
 import App from './App';
 import './styles/styles.css'
 import Drivers from './routes/Drivers';
