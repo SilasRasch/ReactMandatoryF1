@@ -5,5 +5,86 @@
 }
 
 .content {
-    padding: 0 1em;
+    padding: 0 5em;
+}
+
+.drivers {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(235, 235, 235);
+    padding: 3em 0;
+    margin: 3em 0;
+    border-radius: 3em;
+    box-shadow: -6px -6px 0 grey, -12px -12px 0 red, 0 0 2em rgba(0, 0, 0, 0.507);
+}
+
+.drivers > * {
+    padding: 1em;
+    margin: 1em;
+    border-radius: 1em;
+    box-shadow: -6px -6px 0 grey, -12px -12px 0 red, 0 0 2em rgba(0, 0, 0, 0.507);
+    background-color: white;
+}
+
+.driver:hover {
+    box-shadow: -6px -6px 0 grey, -12px -12px 0 red, 0 0px 2em rgb(31, 31, 31), -18px -18px 0 black;
+}
+
+.driver {
+    transition: 0.25s ease-in-out;
+    padding: 1em;
+}
+
+.title {
+    text-align: center;
+    margin-top: 1em;
+}
+
+.d-flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.driver-number {
+    margin-left: 1em;
+}
+
+.favorite {
+    background-color: white;
+    border: none;
+    padding: 0.4em 1em;
+}
+
+.favorite:hover {
+    background-color: red;
+}
+
+.driver-avatar {
+    max-width: 10em;
+    margin: 0.5em 1em;
+}
+
+.driver-bottom {
+    padding: 0.5em 0;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-column > * {
+    margin: 0 0 2.7em 0;
+}
+
+.pts {
+    background-color: rgb(31, 31, 31);
+    padding: 1em;
+    color: white;
+    border-radius: 2em;
+}
+
+.driver-no {
+    font-weight: bolder;
+    font-size: 1.2rem;
 }
