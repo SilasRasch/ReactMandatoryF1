@@ -1,0 +1,7 @@
+{
+    "drivers": [
+        { "id": 1, "name": "Max Verstappen", "team": "Redbull", "age": 25, "points": 11, "wins": 105, "championships": 3, "number": 1, "imgPath": "https://cdn.racingnews365.com/Riders/Verstappen/_570x570_crop_center-center_none/f1_2024_mv_red_lg.png?v=1708703879" },
+        { "id": 2, "name": "Lewis Hamilton", "team": "Mercedes", "age": 32, "points": 6, "wins": 205, "championships": 7, "number": 44, "imgPath": "https://cdn.racingnews365.com/Riders/Hamilton/_570x570_crop_center-center_none/f1_2024_lh_mer_lg.png?v=1708704226" },
+        { "id": 3, "name": "Fernando Alonso", "team": "Aston Martin", "age": 43, "points": 2, "wins": 84, "championships": 2, "number": 14, "imgPath": "https://cdn.racingnews365.com/Riders/Alonso/_570x570_crop_center-center_none/f1_2024_fa_ast_2024-02-23-153204_uobv.png?v=1708704313" }
+    ]
+}
