@@ -88,3 +88,13 @@
     font-weight: bolder;
     font-size: 1.2rem;
 }
+
+.home {
+    display: grid;
+    justify-content: center;
+}
+
+.home-title {
+    margin-top: 1em;
+    text-align: center;
+}

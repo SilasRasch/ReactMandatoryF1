@@ -3,7 +3,7 @@ import { useGetDriversQuery } from '../store/api/apiSlice';
 
 const DriverList = () => {
     // const dispatch = useDispatch()
-    // const drivers = useSelector(({driver: {data, searchTerm}}) => {
+    // const driversFromState = useSelector(({driver: {data, searchTerm}}) => {
     //     return data.filter((driver) => driver.name.toLowerCase().includes(searchTerm.toLowerCase()));
     // });
 
@@ -13,6 +13,7 @@ const DriverList = () => {
     if (isLoading) {
         content = <p>Loading</p>
     } else if (isSuccess) {
+        console.log(drivers)
         content = drivers.map((driver) => {
             return (
                 <div key={driver.id} className='driver'>
