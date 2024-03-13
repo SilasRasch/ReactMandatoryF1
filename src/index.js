@@ -32,9 +32,7 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")).render(
   <Provider store={store}>
     <React.StrictMode>
-      {/* <ApiProvider api={apiSlice}> */}
         <RouterProvider router={router} /> 
-      {/* </ApiProvider> */}
     </React.StrictMode>
   </Provider>
 );
