@@ -18,3 +18,18 @@ body {
     color: white;
     text-decoration: none;
 }
+
+.nav-item {
+    transition: ease-in-out 1s;
+    text-decoration-color: red;
+}
+
+.nav-item:hover {
+    text-decoration: underline;
+    text-decoration-color: red;
+}
+
+.active {
+    text-decoration: underline;
+    text-decoration-color: red;
+}

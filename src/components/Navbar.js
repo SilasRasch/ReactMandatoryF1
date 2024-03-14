@@ -6,22 +6,22 @@ export default function Navbar() {
         <div className="navbar">
             <NavLink to="/">
                 {({ isActive, isPending, isTransitioning }) => (
-                <span className={isActive ? "active" : ""}>Home</span>
+                <span className={isActive ? "active nav-item" : "nav-item"}>Home</span>
                 )}
             </NavLink>
             <NavLink to="/drivers">
                 {({ isActive, isPending, isTransitioning }) => (
-                <span className={isActive ? "active" : ""}>Drivers</span>
+                <span className={isActive ? "active nav-item" : "nav-item"}>Drivers</span>
                 )}
             </NavLink>
             <NavLink to="/teams">
                 {({ isActive, isPending, isTransitioning }) => (
-                <span className={isActive ? "active" : ""}>Teams</span>
+                <span className={isActive ? "active nav-item" : "nav-item"}>Teams</span>
                 )}
             </NavLink>
             <NavLink to="/champions">
                 {({ isActive, isPending, isTransitioning }) => (
-                <span className={isActive ? "active" : ""}>Champions</span>
+                <span className={isActive ? "active nav-item" : "nav-item"}>Champions</span>
                 )}
             </NavLink>
         </div>

@@ -80,6 +80,7 @@
 .pts {
     background-color: rgb(31, 31, 31);
     padding: 1em;
+    margin-right: 4px;
     color: white;
     border-radius: 2em;
 }
@@ -117,11 +118,6 @@
 .btn:hover {
     background-color: rgb(226, 226, 226);
     cursor: pointer;
-}
-
-.active {
-    text-decoration: underline;
-    text-decoration-color: red;
 }
 
 .driver-form {
@@ -168,4 +164,15 @@
 
 .driver-form > div > input {
     padding: 4px
+}
+
+.driver-buttons {
+    display: flex;
+}
+
+.driver-buttons > * {
+    background-color: rgb(31, 31, 31);
+    padding: 1em;
+    color: white;
+    border-radius: 2em;
 }
