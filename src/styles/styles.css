@@ -98,3 +98,74 @@
     margin-top: 1em;
     text-align: center;
 }
+
+.heading {
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    z-index: 2;
+}
+
+.btn-add {
+    padding: 0.5em;
+    margin: 2em 0 0 1em;
+    background-color: white;
+    border-radius: 0.5em;
+    transition: 0.4s;
+}
+
+.btn:hover {
+    background-color: rgb(226, 226, 226);
+    cursor: pointer;
+}
+
+.active {
+    text-decoration: underline;
+    text-decoration-color: red;
+}
+
+.driver-form {
+    animation: fadeInAnimation ease 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        margin-top: -27vw;
+        z-index: -1;
+    }
+    99% {
+        z-index: -1;
+    }
+    100% {
+        margin-top: 1em;
+        z-index: auto;
+    }
+}
+
+.driver-form {
+    position: relative;
+    display: grid;
+    justify-content: center;
+    align-items: right;
+}
+
+.driver-form > div {
+    display: grid;
+}
+
+.btn {
+    transition: 0.4s;
+}
+
+.btn-submit {
+    padding: 0.5em;
+    margin: 1em;
+    background-color: white;
+    border-radius: 0.5em;
+}
+
+.driver-form > div > input {
+    padding: 4px
+}

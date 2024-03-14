@@ -8,9 +8,33 @@ export const apiSlice = createApi({
     baseQuery: fetchBaseQuery({ baseUrl: formula1api }),
     endpoints: (builder) => ({
         getDrivers: builder.query({
-            query: () => '/drivers'
+            query: () => '/drivers',
+            providesTags: (result, error, driver) => [
+                { type: 'Driver', id: "DRIVER" }
+            ]
+        }),
+        addDriver: builder.mutation({
+            invalidatesTags: (result, error, driver) => { return [{type: 'Driver', driverNumber: driver.driverNumber}]},
+            query: (driver) => {
+                return {
+                    url: '/drivers',
+                    method: 'POST',
+                    body: {
+                        driverNumber: driver.driverNumber,
+                        name: driver.name,
+                        code: driver.code,
+                        country: driver.country,
+                        points: driver.points,
+                        championships: driver.championships,
+                        portraitImgPath: driver.portraitImgPath,
+                        dateOfBirth: driver.dateOfBirth,
+                        teamId: driver.team,
+                        team: []
+                    }
+                }
+            }
         })
     })
 })
 
-export const { useGetDriversQuery } = apiSlice
+export const { useGetDriversQuery, useAddDriverMutation } = apiSlice
