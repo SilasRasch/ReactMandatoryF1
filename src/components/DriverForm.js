@@ -3,12 +3,12 @@ import { useAddDriverMutation } from '../store/api/apiSlice';
 import { useState } from 'react';
 
 const DriverForm = () => {
-    const [addDriver, {isLoading}] = useAddDriverMutation()
+    const [addDriver] = useAddDriverMutation()
     const [name, setName] = useState('')
     const [number, setNumber] = useState('0')
     const [code, setCode] = useState('')
     const [country, setCountry] = useState('')
-    const [team, setTeam] = useState('0')
+    const [teamId, setTeamId] = useState('0')
     const [dateOfBirth, setDateOfBirth] = useState('')
     const [championships, setChampionships] = useState('0')
     const [points, setPoints] = useState('0')
@@ -16,8 +16,7 @@ const DriverForm = () => {
 
     const handleSubmit = async (event) => {
         event.preventDefault() 
-        await addDriver({number, name, code, country, points, championships, portraitImgPath, dateOfBirth, team})
-        console.log({number, name, code, country, points, championships, portraitImgPath, dateOfBirth, team})
+        await addDriver({number, name, code, country, points, championships, portraitImgPath, dateOfBirth, teamId})
     }
 
     return (
@@ -40,7 +39,7 @@ const DriverForm = () => {
             </div>
             <div>
                 <label>Team Id</label>
-                <input name='teamInput' value={team} onChange={e => setTeam(e.target.value)}/>
+                <input name='teamInput' value={teamId} onChange={e => setTeamId(e.target.value)}/>
             </div>
             <div>
                 <label>Date of Birth</label>

@@ -15,22 +15,22 @@ export const apiSlice = createApi({
         }),
         addDriver: builder.mutation({
             invalidatesTags: (result, error, driver) => { return [{type: 'Driver', driverNumber: driver.driverNumber}]},
-            query: (driver) => {
+            query: (body) => {
                 return {
                     url: '/drivers',
                     method: 'POST',
-                    body: {
-                        driverNumber: driver.driverNumber,
-                        name: driver.name,
-                        code: driver.code,
-                        country: driver.country,
-                        points: driver.points,
-                        championships: driver.championships,
-                        portraitImgPath: driver.portraitImgPath,
-                        dateOfBirth: driver.dateOfBirth,
-                        teamId: driver.team,
-                        team: []
-                    }
+                    body,
+                        /* {
+                        "driverNumber": 1,
+                        "name": "string",
+                        "code": "string",
+                        "country": "string",
+                        "points": 0,
+                        "championships": 0,
+                        "portraitImgPath": "string",
+                        "dateOfBirth": "2024-03-14",
+                        "teamId": 1
+                        } */
                 }
             }
         })
