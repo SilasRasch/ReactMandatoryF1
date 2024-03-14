@@ -2,11 +2,6 @@ import React from 'react';
 import { useGetDriversQuery } from '../store/api/apiSlice';
 
 const DriverList = () => {
-    // const dispatch = useDispatch()
-    // const driversFromState = useSelector(({driver: {data, searchTerm}}) => {
-    //     return data.filter((driver) => driver.name.toLowerCase().includes(searchTerm.toLowerCase()));
-    // });
-
     const { data, isLoading, isSuccess, isError, error } = useGetDriversQuery()
 
     let content;

@@ -1,6 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
-// const localApi = "http://localhost:3500"
 const formula1api = "https://formula1api.azurewebsites.net/api"
 
 export const apiSlice = createApi({
@@ -20,17 +19,6 @@ export const apiSlice = createApi({
                     url: '/drivers',
                     method: 'POST',
                     body,
-                        /* {
-                        "driverNumber": 1,
-                        "name": "string",
-                        "code": "string",
-                        "country": "string",
-                        "points": 0,
-                        "championships": 0,
-                        "portraitImgPath": "string",
-                        "dateOfBirth": "2024-03-14",
-                        "teamId": 1
-                        } */
                 }
             }
         })
