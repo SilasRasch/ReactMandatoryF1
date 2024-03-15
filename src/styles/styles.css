@@ -176,3 +176,7 @@
     color: white;
     border-radius: 2em;
 }
+
+.btn-fav {
+    justify-content: flex-end;
+}
