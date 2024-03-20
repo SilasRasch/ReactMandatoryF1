@@ -17,19 +17,24 @@ body {
     font-size: 1.25rem;
     color: white;
     text-decoration: none;
+    border-radius: 1em;
 }
 
 .nav-item {
-    transition: ease-in-out 1s;
+    transition: ease-in-out .2s;
+    border-radius: 1em;
     text-decoration-color: red;
+    padding: .75em;
 }
 
 .nav-item:hover {
     text-decoration: underline;
     text-decoration-color: red;
+    background-color: rgba(0, 0, 0, 0.205);
 }
 
 .active {
     text-decoration: underline;
     text-decoration-color: red;
+    background-color: rgba(0, 0, 0, 0.205);
 }

@@ -19,9 +19,9 @@ export default function Navbar() {
                 <span className={isActive ? "active nav-item" : "nav-item"}>Teams</span>
                 )}
             </NavLink>
-            <NavLink to="/champions">
+            <NavLink to="/favorites">
                 {({ isActive, isPending, isTransitioning }) => (
-                <span className={isActive ? "active nav-item" : "nav-item"}>Champions</span>
+                <span className={isActive ? "active nav-item" : "nav-item"}>Favorites</span>
                 )}
             </NavLink>
         </div>

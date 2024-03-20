@@ -6,7 +6,7 @@ const Champions = () => {
         <div>
             <Navbar/>
             <div className='content'>
-                <h1>Champions</h1>
+                <h1>My Favorites</h1>
             </div>
         </div>
     );

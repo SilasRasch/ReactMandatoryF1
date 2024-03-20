@@ -4,6 +4,8 @@ import { useState } from 'react';
 
 const DriverList = () => {
     const { data, isLoading, isSuccess, isError, error } = useGetDriversQuery()
+    
+    // Making sure favorites is never null, but an empty array.
     const [favorites, setFavorites] = useState(() => 
     {
         const local = JSON.parse(localStorage.getItem('favoriteDrivers'))
@@ -13,25 +15,39 @@ const DriverList = () => {
         }
         return local
     })
-    // console.log(JSON.parse(localStorage.getItem('favoriteDrivers')))
+    
+    // Debugging
+    //console.log(JSON.parse(localStorage.getItem('favoriteDrivers')))
 
+    // Add to copy and then set local storage
+    // setFavorites (setState) is async and will issue re-render before state is set.
+    // State will therefore be one event behind at all renders...
     const handleFavorite = async (id) => {
-        if (favorites.includes(id)) {
-            await setFavorites(favorites.filter(d => d !== id))
+        const setLocalStorage = (arr) => {
+            localStorage.setItem('favoriteDrivers', JSON.stringify(arr))  
+        }
+        
+        var copy = favorites
+        
+        if (copy.includes(id)) {
+            copy = copy.filter(d => d !== id)
+            setLocalStorage(copy)    
+            await setFavorites(copy)
         }
         else {
-            await setFavorites([...favorites, id])
-        }
-
-        localStorage.setItem('favoriteDrivers', JSON.stringify(favorites))        
+            copy = [...copy, id]
+            setLocalStorage(copy)   
+            await setFavorites(copy)
+        }     
     }
 
+    // Conditional rendering
     let content;
     if (isLoading) {
-        content = <p>Loading <i className="fa fa-circle-o-notch fa-spin" style={{fontSize: '24px'}}></i></p>
+        content = <p className='loading'>Loading <i className="fa fa-circle-o-notch fa-spin" style={{fontSize: '24px'}}></i></p>
     } else if (isSuccess) {
         content = data.map((driver) => {
-            const classes = "d-flex driver-top " + driver.team.teamColors
+            const classes = "driver " + driver.team.teamColors
             
             let isFavorite = false;
             if (favorites.includes(driver.driverNumber)) {
@@ -39,8 +55,8 @@ const DriverList = () => {
             }
 
             return (
-                <div key={driver.driverNumber} className='driver'>
-                    <div className={classes}>
+                <div key={driver.driverNumber} className={classes}>
+                    <div className='d-flex driver-top'>
                         <div className='column info-column'>
                             <div>
                                 <p className='driver-no'>{driver.driverNumber}</p>
@@ -68,7 +84,7 @@ const DriverList = () => {
                         <div className='driver-buttons'>
                             <p className='pts'>{driver.points} pts</p>
                             {/* { pointsHidden ? <p className='pts'>{driver.points} pts</p> : <button className='pts btn fa fa-heart' onClick={handleFavorite(driver.driverNumber)}></button>} */}
-                            <button key={driver.driverNumber} className='btn btn-fav fa fa-heart' style={isFavorite ? {backgroundColor: 'red'} : {}} onClick={() => handleFavorite(driver.driverNumber)}></button>
+                            <button key={driver.driverNumber} className='btn btn-fav fa fa-heart' style={isFavorite ? {backgroundColor: 'darkred'} : {}} onClick={() => handleFavorite(driver.driverNumber)}></button>
                         </div>
                     </div>
                 </div>

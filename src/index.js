@@ -7,7 +7,7 @@ import { store } from './store';
 import App from './App';
 import './styles/styles.css'
 import Drivers from './routes/Drivers';
-import Champions from './routes/Champions';
+import Favorites from './routes/Favorites';
 import Teams from './routes/Teams';
 
 const router = createBrowserRouter([
@@ -24,8 +24,8 @@ const router = createBrowserRouter([
     element: <Teams />,
   },
   {
-    path: "/champions",
-    element: <Champions />,
+    path: "/favorites",
+    element: <Favorites />,
   },
 ]);
 

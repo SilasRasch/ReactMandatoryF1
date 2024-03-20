@@ -21,7 +21,19 @@ export const apiSlice = createApi({
                     body,
                 }
             }
+        }),
+        // TODO
+        updateDriver: builder.mutation({
+            invalidatesTags: (result, error, driver) => { return [{type: 'Driver', driverNumber: driver.driverNumber}]},
+            query: (body) => {
+                return {
+                    url: '/drivers/' + body.driver.driverNumber,
+                    method: 'PUT',
+                    body,
+                }
+            }
         })
+        // Delete
     })
 })
 
