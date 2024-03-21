@@ -7,7 +7,7 @@ const App = () => {
     <div className="App">
       <Navbar /> 
       <div className="content home">
-        <h1 className="home-title">Formula 1 Unofficial&trade;</h1>
+        <h1 className="home-title">Formula 1 Unofficial&trade;<hr /></h1>
         <img src={f1Logo} alt="f1 logo"/>
       </div>
     </div>

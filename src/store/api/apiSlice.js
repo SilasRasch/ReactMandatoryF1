@@ -49,8 +49,18 @@ export const apiSlice = createApi({
                 {type: 'Team', id: 'team.id'}
             ],
             query: () => '/teams'
-        })
+        }),
+        addTeam: builder.mutation({
+            invalidatesTags: (result, error, team) => { return [{type: 'Team', id: team.id}]},
+            query: (team) => {
+                return {
+                    url: '/teams',
+                    method: 'POST',
+                    team,
+                }
+            }
+        }),
     })
 })
 
-export const { useGetDriversQuery, useAddDriverMutation, useUpdateDriverMutation, useDeleteDriverMutation, useGetTeamsQuery } = apiSlice
+export const { useGetDriversQuery, useAddDriverMutation, useUpdateDriverMutation, useDeleteDriverMutation, useGetTeamsQuery, useAddTeamMutation } = apiSlice

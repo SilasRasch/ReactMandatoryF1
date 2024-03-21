@@ -27,6 +27,69 @@
     box-shadow: -6px -6px 0 grey, -12px -12px 0 rgb(0, 97, 207), 0 0px 2em rgb(31, 31, 31), -18px -18px 0 black;
 }
 
+/* McLaren */
+.orange {
+    box-shadow: -6px -6px 0 grey, -12px -12px 0 orange, 0 0px 2em rgb(31, 31, 31);
+}
+
+.orange:hover {
+    box-shadow: -6px -6px 0 grey, -12px -12px 0 orange, 0 0px 2em rgb(31, 31, 31), -18px -18px 0 black;
+}
+
+/* Aston Martin */
+.dark-green {
+    box-shadow: -6px -6px 0 grey, -12px -12px 0 rgb(0, 100, 83), 0 0px 2em rgb(31, 31, 31);
+}
+
+.dark-green:hover {
+    box-shadow: -6px -6px 0 grey, -12px -12px 0 rgb(0, 100, 83), 0 0px 2em rgb(31, 31, 31), -18px -18px 0 black;
+}
+
+/* Haas */
+.grey {
+    box-shadow: -6px -6px 0 grey, -12px -12px 0 rgb(190, 190, 190), 0 0px 2em rgb(31, 31, 31);
+}
+
+.grey:hover {
+    box-shadow: -6px -6px 0 grey, -12px -12px 0 rgb(190, 190, 190), 0 0px 2em rgb(31, 31, 31), -18px -18px 0 black;
+}
+
+/* Williams */
+.williams-blue {
+box-shadow: -6px -6px 0 grey, -12px -12px 0 rgb(79, 188, 255), 0 0px 2em rgb(31, 31, 31);
+}
+
+.williams-blue:hover {
+    box-shadow: -6px -6px 0 grey, -12px -12px 0 rgb(79, 188, 255), 0 0px 2em rgb(31, 31, 31), -18px -18px 0 black;
+}
+
+/* Kick Sauber F1 */
+.green {
+    box-shadow: -6px -6px 0 grey, -12px -12px 0 rgb(0, 255, 0), 0 0px 2em rgb(31, 31, 31);
+}
+
+.green:hover {
+    box-shadow: -6px -6px 0 grey, -12px -12px 0 rgb(0, 255, 0), 0 0px 2em rgb(31, 31, 31), -18px -18px 0 black;
+}
+
+/* RB */
+.rb-blue {
+    box-shadow: -6px -6px 0 grey, -12px -12px 0 blue, 0 0px 2em rgb(31, 31, 31);
+}
+
+.rb-blue:hover {
+    box-shadow: -6px -6px 0 grey, -12px -12px 0 blue, 0 0px 2em rgb(31, 31, 31), -18px -18px 0 black;
+}
+
+/* Alpina */
+.alpine-blue {
+    box-shadow: -6px -6px 0 grey, -12px -12px 0 rgb(0, 89, 255), 0 0px 2em rgb(31, 31, 31);
+}
+
+.alpine-blue:hover {
+    box-shadow: -6px -6px 0 grey, -12px -12px 0 rgb(0, 89, 255), 0 0px 2em rgb(31, 31, 31), -18px -18px 0 black;
+}
+
 /* --------------- */
 /* Team colors end */
 /* --------------- */
@@ -64,37 +127,6 @@ html {
     margin: 0 auto;
 }
 
-.driver-form {
-    animation: fadeInAnimation ease 1s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-}
-
-@keyframes fadeInAnimation {
-    0% {
-        margin-top: -27vw;
-        z-index: -1;
-    }
-    99% {
-        z-index: -1;
-    }
-    100% {
-        margin-top: 1em;
-        z-index: auto;
-    }
-}
-
-.driver-form {
-    position: relative;
-    display: grid;
-    justify-content: center;
-    align-items: right;
-}
-
-.driver-form > div {
-    display: grid;
-}
-
 .info-column > * {
     margin: 0 0 2.7em 0;
 }
@@ -106,6 +138,8 @@ html {
     color: white;
     border-radius: 2em;
     font-weight: bold;
+    width: 7em;
+    text-align: center;
 }
 
 .driver-no {
@@ -175,4 +209,8 @@ html {
     margin: 0 auto;
     margin-top: 2em;
     z-index: 2;
+}
+
+.img-input {
+    width: 320px;
 }

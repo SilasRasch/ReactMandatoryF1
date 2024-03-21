@@ -1,6 +1,7 @@
 import React from 'react';
 import { useGetDriversQuery } from '../store/api/apiSlice';
 import { useState } from 'react';
+import Points from './Points';
 
 const DriverList = () => {
     const { data, isLoading, isSuccess, isError, error } = useGetDriversQuery()
@@ -46,7 +47,8 @@ const DriverList = () => {
     if (isLoading) {
         content = <p className='loading'>Loading <i className="fa fa-circle-o-notch fa-spin" style={{fontSize: '24px'}}></i></p>
     } else if (isSuccess) {
-        content = data.map((driver) => {
+        const sortedData = data.toSorted((a, b) => b.points - a.points)
+        content = sortedData.map((driver, index) => {
             const classes = "driver " + driver.team.teamColors
             
             let isFavorite = false;
@@ -82,7 +84,7 @@ const DriverList = () => {
                             <p>{driver.team.name}</p>
                         </div>
                         <div className='driver-buttons'>
-                            <p className='pts'>{driver.points} pts</p>
+                            <p className='pts' style={Points(index)}>{driver.points} pts</p>
                             {/* { pointsHidden ? <p className='pts'>{driver.points} pts</p> : <button className='pts btn fa fa-heart' onClick={handleFavorite(driver.driverNumber)}></button>} */}
                             <button key={driver.driverNumber} className='btn btn-fav fa fa-heart' style={isFavorite ? {backgroundColor: 'darkred'} : {}} onClick={() => handleFavorite(driver.driverNumber)}></button>
                         </div>
