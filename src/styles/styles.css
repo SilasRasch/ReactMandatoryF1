@@ -228,3 +228,7 @@ input {
 .text-center {
     text-align: center;
 }
+
+.landing-f1logo {
+    max-width: 30vw;
+}

@@ -7,7 +7,7 @@ const App = () => {
       <Navbar /> 
       <div className="content home">
         <h1 className="home-title">Formula 1 Unofficial&trade;<hr /></h1>
-        <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/F1.svg/1280px-F1.svg.png' alt="f1 logo"/>
+        <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/F1.svg/1280px-F1.svg.png' alt="f1 logo" className="landing-f1logo"/>
       </div>
     </div>
   );
