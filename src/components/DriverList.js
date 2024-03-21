@@ -19,9 +19,9 @@ const DriverList = () => {
     // Debugging
     //console.log(JSON.parse(localStorage.getItem('favoriteDrivers')))
 
-    // Add to copy and then set local storage
-    // setFavorites (setState) is async and will issue re-render before state is set.
-    // State will therefore be one event behind at all renders...
+    /* Add to copy and then set local storage
+    setFavorites (setState) is async and will issue re-render before state is set.
+    State will therefore be one event behind at all renders... */
     const handleFavorite = async (id) => {
         const setLocalStorage = (arr) => {
             localStorage.setItem('favoriteDrivers', JSON.stringify(arr))  

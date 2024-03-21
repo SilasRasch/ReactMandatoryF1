@@ -6,7 +6,9 @@ const Champions = () => {
         <div>
             <Navbar/>
             <div className='content'>
-                <h1>My Favorites</h1>
+                <div className="d-flex heading">
+                    <h1 className="title">My favorites<hr /></h1>
+                </div>
             </div>
         </div>
     );

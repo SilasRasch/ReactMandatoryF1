@@ -70,3 +70,71 @@ hr {
     background-color: white;
     border-radius: 0.5em;
 }
+
+.card-top {
+
+}
+
+.card-bottom {
+    padding: 0.5em 0;
+    align-items: center;
+}
+
+.card-bottom > .column > p,
+.card-top > .column > div {
+    margin: 0.25em 0;
+}
+
+.avatar {
+    width: 8em;
+    height: 8em;
+    margin: 0.5em 1em;
+    box-shadow: 0 16px 12px rgba(0, 0, 0, 0.281);
+    background-color: rgba(0, 0, 0, 0.377);
+    border-radius: 1rem;
+}
+
+.team-points {
+    margin: 1em !important;
+}
+
+.card {
+    transition: 0.25s ease-in-out;
+    padding: 1em;
+    border-radius: 1em;
+    background-color: rgb(29, 6, 48);
+    color: white;
+}
+
+.card:hover {
+    scale: 1.01;
+}
+
+.column > * {
+    font-size: 1.2rem;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 400px));
+    grid-gap: 2rem;
+    justify-content: center;
+    background-color: rgb(58, 55, 63);
+    padding: 3em 0;
+    margin: 3em 3em;
+    margin-top: 0;
+    border-radius: 3em;
+    box-shadow: -6px -6px 0 grey, -12px -12px 0 red, 0 0 2em rgba(0, 0, 0, 0.507);
+}
+
+.heading {
+    justify-content: center;
+    align-items: center;
+    background-color: darkred;
+    padding-bottom: 1.5em;
+    width: 33vw;
+    border-radius: 2em 2em 0 0;
+    margin: 0 auto;
+    margin-top: 2em;
+    z-index: 2;
+}

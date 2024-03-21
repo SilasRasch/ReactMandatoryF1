@@ -11,11 +11,11 @@
 
 /* Mercedes */
 .light-blue {
-    box-shadow: -6px -6px 0 grey, -12px -12px 0 #00A19C, 0 0 2em rgba(0, 0, 0, 0.507);
+    box-shadow: -6px -6px 0 grey, -12px -12px 0 #00d8d1, 0 0 2em rgba(0, 0, 0, 0.507);
 }
 
 .light-blue:hover {
-    box-shadow: -6px -6px 0 grey, -12px -12px 0 #00A19C, 0 0px 2em rgb(31, 31, 31), -18px -18px 0 black;
+    box-shadow: -6px -6px 0 grey, -12px -12px 0 #00d8d1, 0 0px 2em rgb(31, 31, 31), -18px -18px 0 black;
 }
 
 /* Redbull */

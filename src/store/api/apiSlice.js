@@ -9,32 +9,48 @@ export const apiSlice = createApi({
         getDrivers: builder.query({
             query: () => '/drivers',
             providesTags: (result, error, driver) => [
-                { type: 'Driver', id: "DRIVER" }
+                { type: 'Driver', id: 'driver.driverNumber' }
             ]
         }),
         addDriver: builder.mutation({
             invalidatesTags: (result, error, driver) => { return [{type: 'Driver', driverNumber: driver.driverNumber}]},
-            query: (body) => {
+            query: (driver) => {
                 return {
                     url: '/drivers',
                     method: 'POST',
-                    body,
+                    driver,
                 }
             }
         }),
         // TODO
         updateDriver: builder.mutation({
             invalidatesTags: (result, error, driver) => { return [{type: 'Driver', driverNumber: driver.driverNumber}]},
-            query: (body) => {
+            query: (driver) => {
                 return {
-                    url: '/drivers/' + body.driver.driverNumber,
+                    url: `/drivers/${driver.driverNumber}`,
                     method: 'PUT',
-                    body,
+                    driver,
                 }
             }
-        })
+        }),
         // Delete
+        deleteDriver: builder.mutation({
+            invalidatesTags: (result, error, driver) => { return [{type: 'Driver', id: driver.driverNumber}]},
+            query: (driver) => {
+                return {
+                    url: `/drivers/${driver.driverNumber}`,
+                    method: 'DELETE'
+                }
+            }
+        }),
+
+        getTeams: builder.query({
+            providesTags: (result, error, team) => [
+                {type: 'Team', id: 'team.id'}
+            ],
+            query: () => '/teams'
+        })
     })
 })
 
-export const { useGetDriversQuery, useAddDriverMutation } = apiSlice
+export const { useGetDriversQuery, useAddDriverMutation, useUpdateDriverMutation, useDeleteDriverMutation, useGetTeamsQuery } = apiSlice
