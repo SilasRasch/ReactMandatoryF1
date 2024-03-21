@@ -15,7 +15,7 @@ const TeamsList = () => {
         // Map data
         content = sortedData.map((team, index) => {
             return (
-                <Team team={team} index={index}/>
+                <Team key={team.id} team={team} index={index}/>
             )
         })
     } else if (isError) {

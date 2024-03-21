@@ -1,17 +1,23 @@
 import React from 'react';
 import { useGetDriversQuery } from '../store/api/apiSlice';
 import Driver from './Driver';
-// import { useState } from 'react';
+import { useSelector } from 'react-redux';
 
-const DriverList = () => {
+const FavoritesList = () => {
     const { data, isLoading, isSuccess, isError, error } = useGetDriversQuery()
+
+    const favorites = useSelector((state) => state.favorites.data)
 
     // Conditional rendering
     let content;
     if (isLoading) {
         content = <p className='loading'>Loading <i className="fa fa-circle-o-notch fa-spin" style={{fontSize: '24px'}}></i></p>
     } else if (isSuccess) {
-        const sortedData = data.toSorted((a, b) => b.points - a.points)
+        const filtered = data.filter(driver => favorites.includes(driver.driverNumber))
+
+        if (filtered.length === 0) { return <h2 className='driver text-center'>You don't seem to have any favorites...</h2> }
+        
+        const sortedData = filtered.toSorted((a, b) => b.points - a.points)
         content = sortedData.map((driver, index) => {
             return (
                 <Driver key={driver.driverNumber} driver={driver} index={index}/>
@@ -28,4 +34,4 @@ const DriverList = () => {
     )
 }
 
-export default DriverList;
+export default FavoritesList;

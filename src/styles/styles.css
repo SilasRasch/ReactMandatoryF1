@@ -37,7 +37,7 @@ hr {
     padding: 1em;
     text-align: center;
     color: red;
-    text-shadow: 0 0 .5em rgba(0, 0, 0, 0.493);
+    text-shadow: 0 0 .5em rgba(0, 0, 0, 0.253);
 }
 
 .btn-add {
@@ -223,4 +223,8 @@ input {
     100% {
         opacity: 1;
     }
+}
+
+.text-center {
+    text-align: center;
 }

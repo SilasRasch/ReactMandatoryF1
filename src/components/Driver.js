@@ -1,10 +1,20 @@
 import React from 'react';
 import Points from './Points';
+import { useSelector, useDispatch } from 'react-redux';
+import { addFavoriteDriver, removeFavoriteDriver } from '../store/slices/favoritesSlice';
 
 const Driver = (props) => {
     const driver = props.driver
 
-    // Convert to using Global state (react-redux)
+    const favorites = useSelector((state) => state.favorites.data)
+    const dispatch = useDispatch()
+    
+    // Debugging
+    // console.log(JSON.parse(localStorage.getItem('favoriteDrivers')))
+
+    /* Add to copy and then set local storage
+    setFavorites (setState) is async and will issue re-render before state is set.
+    State will therefore be one event behind at all renders... */
     const handleFavorite = async (id) => {
         const setLocalStorage = (arr) => {
             localStorage.setItem('favoriteDrivers', JSON.stringify(arr))  
@@ -15,16 +25,23 @@ const Driver = (props) => {
         if (copy.includes(id)) {
             copy = copy.filter(d => d !== id)
             setLocalStorage(copy)    
-            await setFavorites(copy)
+            dispatch(removeFavoriteDriver(id))
+            // await setFavorites(copy)
         }
         else {
             copy = [...copy, id]
-            setLocalStorage(copy)   
-            await setFavorites(copy)
-        }     
+            setLocalStorage(copy)
+            dispatch(addFavoriteDriver(id))   
+            // await setFavorites(copy)
+        }  
     }
     
     const classes = "driver " + driver.team.teamColors
+
+    let isFavorite = false;
+    if (favorites.includes(driver.driverNumber)) {
+        isFavorite = true
+    }
 
     return (
         <div key={driver.driverNumber} className={classes}>
