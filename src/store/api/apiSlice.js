@@ -4,7 +4,12 @@ const formula1api = "https://formula1api.azurewebsites.net/api"
 
 export const apiSlice = createApi({
     reducerPath: 'api',
-    baseQuery: fetchBaseQuery({ baseUrl: formula1api }),
+    baseQuery: fetchBaseQuery({ 
+        baseUrl: formula1api, 
+        prepareHeaders: (headers) => {
+            headers.set('x-api-key', 'golando4')
+            return headers
+        }}),
     endpoints: (builder) => ({
         getDrivers: builder.query({
             query: () => '/drivers',
