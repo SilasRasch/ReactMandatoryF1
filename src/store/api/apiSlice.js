@@ -5,65 +5,67 @@ const formula1api = "https://formula1api.azurewebsites.net/api"
 export const apiSlice = createApi({
     reducerPath: 'api',
     baseQuery: fetchBaseQuery({ 
-        baseUrl: formula1api, 
+        baseUrl: formula1api,
+        // credentials: 'include', 
         prepareHeaders: (headers) => {
             headers.set('x-api-key', 'golando4')
+            headers.set('Content-Type', 'application/json',)
             return headers
         }}),
     endpoints: (builder) => ({
+        
+        // Drivers
+
         getDrivers: builder.query({
             query: () => '/drivers',
-            providesTags: (result, error, driver) => [
-                { type: 'Driver', id: 'driver.driverNumber' }
-            ]
+            providesTags: ['Drivers']
         }),
         addDriver: builder.mutation({
-            invalidatesTags: (result, error, driver) => { return [{type: 'Driver', driverNumber: driver.driverNumber}]},
             query: (driver) => {
                 return {
                     url: '/drivers',
                     method: 'POST',
-                    driver,
+                    body: driver
                 }
-            }
+            },
+            invalidatesTags: ['Drivers']
         }),
-        // TODO
         updateDriver: builder.mutation({
-            invalidatesTags: (result, error, driver) => { return [{type: 'Driver', driverNumber: driver.driverNumber}]},
             query: (driver) => {
                 return {
                     url: `/drivers/${driver.driverNumber}`,
                     method: 'PUT',
-                    driver,
+                    body: driver
                 }
-            }
+            },
+            invalidatesTags: ['Drivers']
         }),
-        // Delete
         deleteDriver: builder.mutation({
-            invalidatesTags: (result, error, driver) => { return [{type: 'Driver', id: driver.driverNumber}]},
-            query: (driver) => {
+            query: ({id}) => {
                 return {
-                    url: `/drivers/${driver.driverNumber}`,
-                    method: 'DELETE'
+                    url: `/drivers/${id}`,
+                    method: 'DELETE',
+                    body: id
                 }
-            }
+            },
+            invalidatesTags: ['Drivers']
         }),
 
+        // Teams
+
         getTeams: builder.query({
-            providesTags: (result, error, team) => [
-                {type: 'Team', id: 'team.id'}
-            ],
-            query: () => '/teams'
+            query: () => '/teams',
+            providesTags: ['Teams']
         }),
         addTeam: builder.mutation({
-            invalidatesTags: (result, error, team) => { return [{type: 'Team', id: team.id}]},
             query: (team) => {
                 return {
                     url: '/teams',
                     method: 'POST',
-                    team,
+                    body: team
                 }
-            }
+            },
+            invalidatesTags: ['Teams']
         }),
     })
 })
