@@ -1,6 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 const formula1api = "https://formula1api.azurewebsites.net/api"
+// const formula1api = "https://localhost:7047/api"
 
 export const apiSlice = createApi({
     reducerPath: 'api',
@@ -11,7 +12,7 @@ export const apiSlice = createApi({
             headers.set('x-api-key', 'golando4')
             headers.set('Content-Type', 'application/json',)
             return headers
-        }}),
+    }}),
     endpoints: (builder) => ({
         
         // Drivers

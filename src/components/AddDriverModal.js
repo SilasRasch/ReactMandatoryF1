@@ -11,7 +11,7 @@ const AddDriverModal = () => {
     
     const [addDriver] = useAddDriverMutation()
     const [name, setName] = useState('')
-    const [number, setNumber] = useState(0)
+    const [driverNumber, setDriverNumber] = useState(0)
     const [code, setCode] = useState('')
     const [country, setCountry] = useState('')
     const [teamId, setTeamId] = useState(0)
@@ -22,7 +22,21 @@ const AddDriverModal = () => {
 
     const handleSubmit = async (event) => {
         event.preventDefault() 
-        await addDriver({number, name, code, country, points, championships, portraitImgPath, dateOfBirth, teamId})
+        await addDriver({driverNumber, name, code, country, points, championships, portraitImgPath, dateOfBirth, teamId})
+        toggleModal()
+        resetForm()
+    }
+
+    const resetForm = () => {
+        setName('')
+        setDriverNumber(0)
+        setCode('')
+        setCountry('')
+        setTeamId(0)
+        setDateOfBirth('')
+        setChampionships(0)
+        setPoints(0)
+        setPortraitImgPath('')
     }
 
     return (
@@ -47,7 +61,7 @@ const AddDriverModal = () => {
                         <div className='d-flex'>
                             <div className='input-field-group'>
                                 <label>Number</label>
-                                <input name='numberInput' value={number || ''} onChange={e => setNumber(e.target.value)}/>
+                                <input name='numberInput' value={driverNumber || ''} onChange={e => setDriverNumber(e.target.value)}/>
                             </div>
                             <div className='input-field-group'>
                                 <label>Code</label>

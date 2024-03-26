@@ -11,6 +11,7 @@ const DriverList = () => {
     if (isLoading) {
         content = <p className='loading'>Loading <i className="fa fa-circle-o-notch fa-spin" style={{fontSize: '24px'}}></i></p>
     } else if (isSuccess) {
+        console.log(data)
         const sortedData = data.toSorted((a, b) => b.points - a.points)
         content = sortedData.map((driver, index) => {
             return (
