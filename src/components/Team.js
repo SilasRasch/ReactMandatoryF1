@@ -1,9 +1,17 @@
 import React from 'react';
 import Points from './Points';
+import { NavLink } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 const Team = (props) => {
     const team = props.team
+    const isAdmin = useSelector((state) => state.admin.isAdmin)
     const classes = "team card " + team.teamColors
+    
+    const handleEdit = (id) => {
+        console.log("Edit: " + id)
+    }
+
     return (
         <div key={team.id} className={classes}>
             <div className='d-flex card-top'>
@@ -35,7 +43,11 @@ const Team = (props) => {
                     { team.drivers[1] !== undefined ? <p>{team.drivers[1].name}</p> : <p>Driver unavailable</p>}
                     {/* <p>{team.drivers[1].name}</p> */}
                 </div>
-                <p className='pts team-points' style={Points(props.index)}>{team.points} pts</p>
+                {isAdmin ? <p className='pts team-points' style={Points(props.index)}>{team.points} pts</p> : <div className='driver-buttons'>
+                    <p className='pts' style={Points(props.index)}>{team.points} pts</p>
+                    <NavLink to={"/team/" + team.id} key={team.id} className='btn btn-fav fa fa-pencil' onClick={() => handleEdit(team.id)}></NavLink>
+                </div>}
+                
             </div>
         </div>
     );

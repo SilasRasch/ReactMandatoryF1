@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import Team from '../components/Team';
 import Navbar from '../components/Navbar';
 import { useGetTeamByIdQuery } from '../store/api/apiSlice';
+import { NavLink } from 'react-router-dom';
 
 const UpdateTeam = () => {
     const { id } = useParams() 
@@ -27,6 +28,10 @@ const UpdateTeam = () => {
                 </div>
                 <div className='drivers'>
                     {content}
+                    <div className='update-btns'>
+                        <NavLink to={'/teams'} className='btn-neutral cancel-btn'><span>Cancel</span></NavLink>
+                        <button className='btn-neutral update-btn'>Update</button>
+                    </div>
                 </div>
                 
             </div>
