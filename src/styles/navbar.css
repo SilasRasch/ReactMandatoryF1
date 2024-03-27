@@ -38,3 +38,31 @@ body {
     text-decoration-color: red;
     background-color: rgba(0, 0, 0, 0.205);
 }
+
+.toggle-btn {
+    border: none;
+    color: white;
+    font-size: 1rem;
+    padding: 0 .75em;
+    transition: 0.4s;
+}
+
+.admin-off {
+    background-color: rgba(0, 0, 0, 0.295);
+}
+
+.admin-on {
+    background-color: green !important;
+}
+
+.toggle-btn:hover {
+    cursor: pointer;
+}
+
+.admin-on:hover {
+    background-color: darkred !important;
+}
+
+.admin-off:hover {
+    background-color: darkgreen !important;
+}

@@ -232,3 +232,41 @@ input {
 .landing-f1logo {
     max-width: 30vw;
 }
+
+.update-btns {
+    display: grid;
+    max-width: 100px;
+    border-radius: 1em;
+}
+
+.btn-neutral {
+    border: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: .4s;
+}
+
+.btn-neutral:hover {
+    cursor: pointer;
+}
+
+.cancel-btn {
+    background-color: red;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.update-btn {
+    background-color: green;
+}
+
+.cancel-btn:hover {
+    background-color: darkred;
+}
+
+.update-btn:hover {
+    background-color: darkgreen;
+}

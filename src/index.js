@@ -9,6 +9,8 @@ import './styles/styles.css'
 import Drivers from './routes/Drivers';
 import Favorites from './routes/Favorites';
 import Teams from './routes/Teams';
+import UpdateDriver from './routes/UpdateDriver';
+import UpdateTeam from './routes/UpdateTeam';
 
 const router = createBrowserRouter([
   {
@@ -27,6 +29,15 @@ const router = createBrowserRouter([
     path: "/favorites",
     element: <Favorites />,
   },
+  {
+    path: "/driver/:id",
+    element: <UpdateDriver />
+  },
+  {
+    path: "/team/:id",
+    element: <UpdateTeam />
+  },
+
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

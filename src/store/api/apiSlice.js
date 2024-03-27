@@ -21,6 +21,10 @@ export const apiSlice = createApi({
             query: () => '/drivers',
             providesTags: ['Drivers']
         }),
+        getDriverById: builder.query({
+            query: (id) => '/drivers/' + id,
+            providesTags: ['Driver']
+        }),
         addDriver: builder.mutation({
             query: (driver) => {
                 return {
@@ -58,6 +62,10 @@ export const apiSlice = createApi({
             query: () => '/teams',
             providesTags: ['Teams']
         }),
+        getTeamById: builder.query({
+            query: (id) => '/teams/' + id,
+            providesTags: ['Team']
+        }),
         addTeam: builder.mutation({
             query: (team) => {
                 return {
@@ -71,4 +79,4 @@ export const apiSlice = createApi({
     })
 })
 
-export const { useGetDriversQuery, useAddDriverMutation, useUpdateDriverMutation, useDeleteDriverMutation, useGetTeamsQuery, useAddTeamMutation } = apiSlice
+export const { useGetDriversQuery, useAddDriverMutation, useUpdateDriverMutation, useDeleteDriverMutation, useGetTeamsQuery, useAddTeamMutation, useGetDriverByIdQuery, useGetTeamByIdQuery } = apiSlice

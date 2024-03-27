@@ -2,11 +2,13 @@ import React from 'react';
 import Points from './Points';
 import { useSelector, useDispatch } from 'react-redux';
 import { addFavoriteDriver, removeFavoriteDriver } from '../store/slices/favoritesSlice';
+import { NavLink } from 'react-router-dom';
 
 const Driver = (props) => {
     const driver = props.driver
 
     const favorites = useSelector((state) => state.favorites.data)
+    const isAdmin = useSelector((state) => state.admin.isAdmin)
     const dispatch = useDispatch()
     
     // Debugging
@@ -34,6 +36,10 @@ const Driver = (props) => {
             dispatch(addFavoriteDriver(id))   
             // await setFavorites(copy)
         }  
+    }
+    
+    const handleEdit = (id) => {
+        console.log("Edit " + id)
     }
     
     const classes = "driver " + driver.team.teamColors
@@ -72,7 +78,7 @@ const Driver = (props) => {
                 </div>
                 <div className='driver-buttons'>
                     <p className='pts' style={Points(props.index)}>{driver.points} pts</p>
-                    <button key={driver.driverNumber} className='btn btn-fav fa fa-heart' style={isFavorite ? {backgroundColor: 'darkred'} : {}} onClick={() => handleFavorite(driver.driverNumber)}></button>
+                    {isAdmin ? <button key={driver.driverNumber} className='btn btn-fav fa fa-heart' style={isFavorite ? {backgroundColor: 'darkred'} : {}} onClick={() => handleFavorite(driver.driverNumber)}></button> : <NavLink to={"/driver/" + driver.driverNumber} key={driver.driverNumber} className='btn btn-fav fa fa-pencil' onClick={() => handleEdit(driver.driverNumber)}></NavLink>}
                 </div>
             </div>
         </div>
