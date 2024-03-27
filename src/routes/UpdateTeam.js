@@ -68,7 +68,7 @@ const UpdateTeam = () => {
                     <div className='update-wrapper'>
                         { !isAdmin && (
                             <div className='delete-wrapper'>
-                                <button className='btn-neutral cancel-btn delete-btn'>Delete</button>
+                                <button className='btn-neutral cancel-btn delete-btn fa fa-trash'></button>
                             </div>
                         )}
                         

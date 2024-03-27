@@ -10,7 +10,7 @@ export const apiSlice = createApi({
         // credentials: 'include', 
         prepareHeaders: (headers) => {
             headers.set('x-api-key', 'golando4')
-            headers.set('Content-Type', 'application/json',)
+            headers.set('Content-Type', 'application/json')
             return headers
     }}),
     endpoints: (builder) => ({

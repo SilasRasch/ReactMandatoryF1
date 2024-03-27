@@ -11,5 +11,5 @@ export const store = configureStore({
     },
 
     middleware: (getDefaultMiddleware) =>
-        getDefaultMiddleware().concat(apiSlice.middleware),
+        getDefaultMiddleware().concat(apiSlice.middleware)
 })
