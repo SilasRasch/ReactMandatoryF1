@@ -235,8 +235,15 @@ input {
 
 .update-btns {
     display: grid;
+    height: 250px;
+    border-radius: 0 1em 1em 0;
+}
+
+.delete-wrapper {
+    display: grid;
     max-width: 100px;
-    border-radius: 1em;
+    height: 250px;
+    border-radius: 1em 0 0 1em;
 }
 
 .btn-neutral {
@@ -245,6 +252,7 @@ input {
     font-weight: bold;
     font-size: 1rem;
     transition: .4s;
+    padding: 0.75em;
 }
 
 .btn-neutral:hover {
@@ -269,4 +277,19 @@ input {
 
 .update-btn:hover {
     background-color: darkgreen;
+}
+
+.update-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(58, 55, 63);
+    padding: 3em 0;
+    margin-top: 0;
+    border-radius: 3em;
+    box-shadow: -6px -6px 0 grey, -12px -12px 0 red, 0 0 2em rgba(0, 0, 0, 0.507);
+}
+
+.delete-btn {
+    padding: 0 1.75em 0 1em;
 }

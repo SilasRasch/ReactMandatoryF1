@@ -4,11 +4,13 @@ import Navbar from '../components/Navbar';
 import { useGetTeamByIdQuery } from '../store/api/apiSlice';
 import { NavLink } from 'react-router-dom';
 import Points from '../components/Points';
+import { useSelector } from 'react-redux';
 
 const UpdateTeam = () => {
     const { id } = useParams() 
     const { data, isLoading, isSuccess, isError, error } = useGetTeamByIdQuery(id)
-    
+    const isAdmin = useSelector((state) => state.admin.isAdmin)
+
     const team = data
 
     let content;
@@ -58,19 +60,30 @@ const UpdateTeam = () => {
     return (
         <div>
             <Navbar />
-            <div className="content">
-                <div className="d-flex heading">
-                    <h1 className="title">Edit team no {id}<hr /></h1>
-                </div>
-                <div className='drivers'>
-                    {content}
-                    <div className='update-btns'>
-                        <NavLink to={'/teams'} className='btn-neutral cancel-btn'><span>Cancel</span></NavLink>
-                        <button className='btn-neutral update-btn'>Update</button>
+            { !isAdmin && (
+                <div className="content">
+                    <div className="d-flex heading">
+                        <h1 className="title">Edit team no {id}<hr /></h1>
+                    </div>
+                    <div className='update-wrapper'>
+                        { !isAdmin && (
+                            <div className='delete-wrapper'>
+                                <button className='btn-neutral cancel-btn delete-btn'>Delete</button>
+                            </div>
+                        )}
+                        
+                        {content}
+
+                        { !isAdmin && (
+                            <div className='update-btns'>
+                                <NavLink to={'/teams'} className='btn-neutral cancel-btn'><span>Cancel</span></NavLink>
+                                <button className='btn-neutral update-btn'>Update</button>
+                            </div>
+                        )}
                     </div>
                 </div>
-                
-            </div>
+            )}
+            
         </div>
     );
 }
