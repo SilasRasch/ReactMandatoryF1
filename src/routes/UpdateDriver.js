@@ -24,26 +24,22 @@ const UpdateDriver = () => {
     return (
         <div>
             <Navbar />
-            { !isAdmin && (
+            { isAdmin && (
                 <div className="content">
                     <div className="d-flex heading">
                         <h1 className="title">Edit driver no {id}<hr /></h1>
                     </div>
                     <div className='update-wrapper'>
-                        { !isAdmin && (
-                            <div className='delete-wrapper'>
-                                <button className='btn-neutral cancel-btn delete-btn fa fa-trash'></button>
-                            </div>
-                        )}
+                        <div className='delete-wrapper'>
+                            <button className='btn-neutral cancel-btn delete-btn fa fa-trash'></button>
+                        </div>
 
                         {content}
 
-                        { !isAdmin && (
-                            <div className='update-btns'>
-                                <NavLink to={'/drivers'} className='btn-neutral cancel-btn'><span>Cancel</span></NavLink>
-                                <button className='btn-neutral update-btn'>Update</button>
-                            </div>  
-                        )}
+                        <div className='update-btns'>
+                            <NavLink to={'/drivers'} className='btn-neutral cancel-btn'><span>Cancel</span></NavLink>
+                            <button className='btn-neutral update-btn'>Update</button>
+                        </div> 
                     </div>
                 </div>
             )}

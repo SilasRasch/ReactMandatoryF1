@@ -13,7 +13,7 @@ const Champions = () => {
             <div className='content'>
                 <div className="d-flex heading">
                     <h1 className="title">F1 Teams of 2024<hr /></h1>
-                    {isAdmin ? <></> : <AddTeamModal />}
+                    { isAdmin ? <AddTeamModal /> : <></> }
                 </div>
                 <TeamsList />
             </div>

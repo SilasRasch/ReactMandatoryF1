@@ -14,8 +14,7 @@ const Drivers = () => {
             <div className="content">
                 <div className="d-flex heading">
                     <h1 className="title">F1 Drivers of 2024<hr /></h1>
-                    {isAdmin ? <></> : <AddDriverModal />}
-                    
+                    {isAdmin ? <AddDriverModal /> : <></> }
                 </div>
                 <DriverList />
             </div>

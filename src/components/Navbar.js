@@ -33,7 +33,7 @@ export default function Navbar() {
                 <span className={isActive ? "active nav-item" : "nav-item"}>Favorites</span>
                 )}
             </NavLink>
-            <button className={isAdmin ? "toggle-btn admin-off fa fa-lock" : "toggle-btn admin-on fa fa-unlock-alt"} onClick={() => handleToggleAdmin()}></button>
+            <button className={!isAdmin ? "toggle-btn admin-off fa fa-lock" : "toggle-btn admin-on fa fa-unlock-alt"} onClick={() => handleToggleAdmin()}></button>
         </div>
     )
 }

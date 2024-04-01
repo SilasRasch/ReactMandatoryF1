@@ -43,7 +43,7 @@ const Team = (props) => {
                     { team.drivers[1] !== undefined ? <p>{team.drivers[1].name}</p> : <p>Driver unavailable</p>}
                     {/* <p>{team.drivers[1].name}</p> */}
                 </div>
-                {isAdmin ? <p className='pts team-points' style={Points(props.index)}>{team.points} pts</p> : <div className='driver-buttons'>
+                {!isAdmin ? <p className='pts team-points' style={Points(props.index)}>{team.points} pts</p> : <div className='driver-buttons'>
                     <p className='pts' style={Points(props.index)}>{team.points} pts</p>
                     <NavLink to={"/team/" + team.id} key={team.id} className='btn btn-fav fa fa-pencil' onClick={() => handleEdit(team.id)}></NavLink>
                 </div>}

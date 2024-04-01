@@ -78,7 +78,7 @@ const Driver = (props) => {
                 </div>
                 <div className='driver-buttons'>
                     <p className='pts' style={Points(props.index)}>{driver.points} pts</p>
-                    {isAdmin ? <button key={driver.driverNumber} className='btn btn-fav fa fa-heart' style={isFavorite ? {backgroundColor: 'darkred'} : {}} onClick={() => handleFavorite(driver.driverNumber)}></button> : <NavLink to={"/driver/" + driver.driverNumber} key={driver.driverNumber} className='btn btn-fav fa fa-pencil' onClick={() => handleEdit(driver.driverNumber)}></NavLink>}
+                    {!isAdmin ? <button key={driver.driverNumber} className='btn btn-fav fa fa-heart' style={isFavorite ? {backgroundColor: 'darkred'} : {}} onClick={() => handleFavorite(driver.driverNumber)}></button> : <NavLink to={"/driver/" + driver.driverNumber} key={driver.driverNumber} className='btn btn-fav fa fa-pencil' onClick={() => handleEdit(driver.driverNumber)}></NavLink>}
                 </div>
             </div>
         </div>
