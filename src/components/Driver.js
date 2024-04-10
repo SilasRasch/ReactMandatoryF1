@@ -28,13 +28,11 @@ const Driver = (props) => {
             copy = copy.filter(d => d !== id)
             setLocalStorage(copy)    
             dispatch(removeFavoriteDriver(id))
-            // await setFavorites(copy)
         }
         else {
             copy = [...copy, id]
             setLocalStorage(copy)
             dispatch(addFavoriteDriver(id))   
-            // await setFavorites(copy)
         }  
     }
     

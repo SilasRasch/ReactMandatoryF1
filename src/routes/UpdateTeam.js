@@ -11,6 +11,10 @@ const UpdateTeam = () => {
     const { data, isLoading, isSuccess, isError, error } = useGetTeamByIdQuery(id)
     const isAdmin = useSelector((state) => state.admin.isAdmin)
 
+    const handleDelete = () => {
+
+    }
+
     const team = data
 
     let content;
@@ -67,7 +71,7 @@ const UpdateTeam = () => {
                     </div>
                     <div className='update-wrapper'>
                         <div className='delete-wrapper'>
-                            <button className='btn-neutral cancel-btn delete-btn fa fa-trash'></button>
+                            <button className='btn-neutral cancel-btn delete-btn fa fa-trash' onClick={() => handleDelete(id)}></button>
                         </div>
                         
                         {content}
