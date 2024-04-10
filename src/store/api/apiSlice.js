@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 //const formula1api = "https://formula1api.azurewebsites.net/api"
-const formula1api = "https://nobitches.win/api"
+const formula1api = "https://f1api.nobitches.win/api"
 // const formula1api = "https://localhost:7047/api"
 
 export const apiSlice = createApi({
